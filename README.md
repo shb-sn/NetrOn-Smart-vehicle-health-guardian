@@ -40,7 +40,7 @@ Designed a modular sensor system using:
 
 ## 📦 Additional Resources
 
-📁 [View on Google Drive (Code + Videos + Certifications)](https://drive.google.com/drive/folders/your-folder-id-here](https://drive.google.com/drive/folders/1zOnzM1O7dhr6BkUN3Z5Bdn3fkH2izzT4?usp=sharing)
+📁 [View on Google Drive (Code + Videos + Certifications)](https://drive.google.com/drive/folders/1zOnzM1O7dhr6BkUN3Z5Bdn3fkH2izzT4?usp=sharing)
 
 ---
 
