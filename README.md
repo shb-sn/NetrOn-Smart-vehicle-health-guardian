@@ -41,6 +41,12 @@ The following image shows the full prototype build of the NetrOn system on a bre
 
 ---
 
+## 🔌 Arduino Code
+
+You can find the complete Arduino code used to read sensors and send data via Bluetooth in the [`arduino_code`](./arduino_code/NetrOn_arduino.ino/Netron_arduino.ino.ino) file.
+
+---
+
 ## 📦 Additional Resources
 
 📁 [View on Google Drive (Code + Videos + Certifications)](https://drive.google.com/drive/folders/1zOnzM1O7dhr6BkUN3Z5Bdn3fkH2izzT4?usp=sharing)
