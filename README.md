@@ -44,7 +44,7 @@ The following image shows the full prototype build of the NetrOn system on a bre
 ## 🔌 Arduino Code
 
 You can find the full Arduino code for sensor monitoring and Bluetooth transmission here:  
-[`NetrOn_arduino.ino`](./arduino_code/NetrOn_arduino.ino/NetrOn_arduino.ino.ino) file.
+[`NetrOn_arduino.ino`](./arduino_code/NetrOn_arduino.ino/NetrOn_arduino.ino.ino)
 
 ---
 
