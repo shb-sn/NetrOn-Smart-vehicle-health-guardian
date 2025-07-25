@@ -34,7 +34,7 @@ Designed a modular sensor system using:
 ---
 
 ## 🔧 Hardware Setup Preview  
-![Hardware Setup](./images/hardware-setup.jpg)
+![Hardware Setup](./hardware-setup.jpg)
 
 ---
 
