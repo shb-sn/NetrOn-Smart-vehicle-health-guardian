@@ -34,7 +34,10 @@ Designed a modular sensor system using:
 ---
 
 ## 🔧 Hardware Setup Preview  
-![Hardware Setup](./images/hardware-setup.jpg)
+
+The following image shows the full prototype build of the NetrOn system on a breadboard, including sensor connections:
+
+![Hardware Setup](./images/hardware_setup.jpg)
 
 ---
 
