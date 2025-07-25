@@ -38,6 +38,7 @@ Designed a modular sensor system using:
 The following image shows the full prototype build of the NetrOn system on a breadboard, including sensor connections:
 
 ![Hardware Setup](./images/hardware_setup.jpg)
+![Arduino Output](./images/arduino_seial_monitor.jpg)
 
 ---
 
@@ -50,7 +51,7 @@ You can find the full Arduino code for sensor monitoring and Bluetooth transmiss
 
 ## 📦 Additional Resources
 
-📁 [View on Google Drive (Code + Videos + Certifications)](https://drive.google.com/drive/folders/1zOnzM1O7dhr6BkUN3Z5Bdn3fkH2izzT4?usp=sharing)
+📁 [View on Google Drive (Code + Videos)](https://drive.google.com/drive/folders/1zOnzM1O7dhr6BkUN3Z5Bdn3fkH2izzT4?usp=sharing)
 
 ---
 
