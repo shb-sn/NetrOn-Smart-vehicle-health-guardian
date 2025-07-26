@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetrOn</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22royalblue%22 /></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          primary: '#1D4ED8', // Tailwind's blue-700 for headings
+          lightbg: '#ebf8ff', // Light blue background
+          darkbg: '#1f2937'   // Gray-800 dark mode
+        }
+      }
+    }
+  }
+</script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .logo {
+      width: 48px;
+      height: 48px;
+    }
+    .light-mode-logo {
+      display: inline;
+    }
+    .dark .light-mode-logo {
+      display: none;
+    }
+    .dark-mode-logo {
+      display: none;
+    }
+    .dark .dark-mode-logo {
+      display: inline;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-white transition-colors duration-500">
+
+  <header class="w-full py-4 px-6 flex justify-between items-center sticky top-0 z-50 glass text-gray-800 dark:text-white bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/20">
+  <div class="flex items-center gap-2">
+    <!-- Logo -->
+    <svg class="logo light-mode-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="50" fill="royalblue" />
+      <circle cx="60" cy="60" r="25" fill="white" />
+      <path d="M30 60 Q60 20 90 60 Q60 100 30 60 Z" fill="none" stroke="white" stroke-width="5" />
+      <circle cx="60" cy="60" r="8" fill="royalblue" />
+    </svg>
+    <svg class="logo dark-mode-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="50" fill="white" />
+      <circle cx="60" cy="60" r="25" fill="#1E3A8A" />
+      <path d="M30 60 Q60 20 90 60 Q60 100 30 60 Z" fill="none" stroke="#1E3A8A" stroke-width="5" />
+      <circle cx="60" cy="60" r="8" fill="white" />
+    </svg>
+    <h1 class="text-2xl font-bold ml-2">NetrOn</h1>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="space-x-6 text-base hidden md:flex font-medium" data-aos="fade-down" data-aos-duration="500">
+  <a href="home.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Home</a>
+  <a href="dashboard.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Dashboard</a>
+  <a href="features.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Features</a>
+  <a href="gallery.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Gallery</a>
+  <a href="team.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Team</a>
+  <a href="report.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Report</a>
+  <a href="contact.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Contact</a>
+</nav>
+
+
+  <!-- Right Side Buttons -->
+<div class="flex items-center gap-3">
+  <!-- Theme Toggle -->
+  <button onclick="toggleTheme()" class="px-3 py-1 bg-gray-700 text-white rounded hover:bg-gray-600 text-sm">Toggle Theme</button>
+
+  <!-- Mobile Menu Toggle -->
+  <button onclick="toggleMobileMenu()" class="md:hidden focus:outline-none text-2xl">
+    ☰
+  </button>
+</div>
+
+<!-- Mobile Dropdown Menu with animation and auto-close -->
+<div id="mobileMenu" 
+     class="absolute top-16 right-4 bg-white dark:bg-gray-900 text-sm rounded shadow-lg hidden md:hidden w-60 p-4 space-y-3 z-50"
+     data-aos="fade-down"
+     data-aos-duration="600">
+  <a href="home.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Home</a>
+  <a href="dashboard.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Dashboard</a>
+  <a href="features.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Features</a>
+  <a href="gallery.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Gallery</a>
+  <a href="team.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Team</a>
+  <a href="report.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Report</a>
+  <a href="contact.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+</header>
+
+
+  <!-- Hero -->
+  <section class="text-center py-16 px-4" data-aos="fade-up">
+    <h2 class="text-5xl font-bold text-blue-600 dark:text-blue-300 mb-4">Welcome to NetrOn</h2>
+    <p class="text-lg max-w-2xl mx-auto">Smart Two-Wheeler Health Monitoring System designed to safeguard your ride through real-time diagnostics and predictive maintenance alerts.</p>
+    <a href="dashboard.html" class="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">Go to Dashboard →</a>
+  </section>
+
+
+  <!--NetrOn Benefits-->
+  <section class="max-w-6xl mx-auto mt-12 px-4 grid gap-6 md:grid-cols-3">
+    <div class="glass p-6 text-center" data-aos="fade-right">
+      <h4 class="text-xl font-bold text-blue-700 dark:text-blue-300">Real-Time Alerts</h4>
+      <p class="mt-2 text-sm">Be instantly informed about abnormal temperature, vibrations, or battery levels—keeping you safe on every ride.</p>
+    </div>
+    <div class="glass p-6 text-center" data-aos="fade-up">
+      <h4 class="text-xl font-bold text-blue-700 dark:text-blue-300">Easy Installation</h4>
+      <p class="mt-2 text-sm">Designed with DIY-friendly setup so anyone can mount and connect NetrOn to their bike in minutes.</p>
+    </div>
+    <div class="glass p-6 text-center" data-aos="fade-left">
+      <h4 class="text-xl font-bold text-blue-700 dark:text-blue-300">Bluetooth-Enabled Web Monitoring</h4>
+      <p class="mt-2 text-sm">Monitor all vehicle vitals in real-time through a user-friendly Bluetooth-connected web dashboard.</p>
+    </div>
+
+  </section>
+
+
+  <!-- How It Works Animation -->
+<section class="max-w-6xl mx-auto mt-20 px-4" data-aos="fade-up">
+  <h3 class="text-3xl font-bold text-blue-700 dark:text-blue-300 text-center mb-10">How NetrOn Works</h3>
+  <div class="grid md:grid-cols-5 gap-6 text-center">
+    <div class="glass p-4" data-aos="fade-up">
+      <h4 class="font-semibold">1. Data Collection</h4>
+      <p class="text-sm">Sensors capture temperature, vibration, and voltage values.</p>
+    </div>
+    <div class="glass p-4" data-aos="fade-up" data-aos-delay="100">
+      <h4 class="font-semibold">2. Processing</h4>
+      <p class="text-sm">Arduino filters and formats the sensor readings.</p>
+    </div>
+    <div class="glass p-4" data-aos="fade-up" data-aos-delay="200">
+      <h4 class="font-semibold">3. Transmission</h4>
+      <p class="text-sm">Bluetooth module sends data to your mobile or web dashboard.</p>
+    </div>
+    <div class="glass p-4" data-aos="fade-up" data-aos-delay="300">
+      <h4 class="font-semibold">4. Monitoring</h4>
+      <p class="text-sm">Dashboard displays live health metrics of your vehicle.</p>
+    </div>
+    <div class="glass p-4" data-aos="fade-up" data-aos-delay="400">
+      <h4 class="font-semibold">5. Alerts</h4>
+      <p class="text-sm">Smart alerts notify you about overheating, faults, or voltage drops.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Pricing Cards -->
+  <section class="max-w-6xl mx-auto mt-12 px-4" data-aos="fade-up">
+    <h3 class="text-3xl font-bold text-center text-blue-700 dark:text-blue-300 mb-8">Choose Your NetrOn Plan</h3>
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="glass p-6 text-center">
+        <h4 class="text-xl font-bold">Tier 1: Basic</h4>
+        <p class="text-sm mt-2">LM35 + ADXL345 + Voltage Monitoring + LEDs + Bluetooth</p>
+        <p class="text-lg font-semibold mt-4">₹899</p>
+        <p class="text-xs text-gray-500">Splashproof box + glue seal</p>
+      </div>
+      <div class="glass p-6 text-center">
+        <h4 class="text-xl font-bold">Tier 2: Standard</h4>
+        <p class="text-sm mt-2">Tier 1 + App + Web UI + Stronger Case</p>
+        <p class="text-lg font-semibold mt-4">₹1399</p>
+        <p class="text-xs text-gray-500">Waterproof gaskets & epoxy</p>
+      </div>
+      <div class="glass p-6 text-center">
+        <h4 class="text-xl font-bold">Tier 3: Advanced</h4>
+        <p class="text-sm mt-2">Tier 2 + USB Port + Rechargeable Battery</p>
+        <p class="text-lg font-semibold mt-4">₹1799</p>
+        <p class="text-xs text-gray-500">IP54+ waterproof case</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-4xl mx-auto mt-16 px-4" data-aos="fade-up">
+    <h3 class="text-3xl font-bold text-blue-700 dark:text-blue-300 mb-6 text-center">FAQs</h3>
+    <div class="space-y-4">
+      <div class="glass p-4">
+        <h4 class="font-semibold">Q: Is it suitable for all two-wheelers?</h4>
+        <p class="text-sm">Yes, NetrOn is designed to be modular and fits most bikes and scooters.</p>
+      </div>
+      <div class="glass p-4">
+        <h4 class="font-semibold">Q: How is data transmitted?</h4>
+        <p class="text-sm">Through a Bluetooth module connected to the onboard Arduino system.</p>
+      </div>
+      <div class="glass p-4">
+        <h4 class="font-semibold">Q: Does it require internet?</h4>
+        <p class="text-sm">No internet needed for local monitoring. Only Bluetooth-enabled app is required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-400 mt-16 mb-4">
+    © 2025 Novare. All rights reserved.
+  </footer>
+
+  <script>
+  // Initialize theme on page load
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+
+  // Toggle theme and save preference
+  function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+
+  // Init animations
+  AOS.init();
+</script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+
+  function closeMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.add("hidden");
+  }
+
+  AOS.init({
+    once: true
+  });
+</script>
+
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetrOn Team</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22royalblue%22 /></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          primary: '#1D4ED8', // Tailwind's blue-700 for headings
+          lightbg: '#ebf8ff', // Light blue background
+          darkbg: '#1f2937'   // Gray-800 dark mode
+        }
+      }
+    }
+  }
+</script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .logo {
+      width: 48px;
+      height: 48px;
+    }
+    .light-mode-logo {
+      display: inline;
+    }
+    .dark .light-mode-logo {
+      display: none;
+    }
+    .dark-mode-logo {
+      display: none;
+    }
+    .dark .dark-mode-logo {
+      display: inline;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-white transition-colors duration-500"></body>
+
+  <header class="w-full py-4 px-6 flex justify-between items-center sticky top-0 z-50 glass text-gray-800 dark:text-white bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/20">
+  <div class="flex items-center gap-2">
+    <!-- Logo -->
+    <svg class="logo light-mode-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="50" fill="royalblue" />
+      <circle cx="60" cy="60" r="25" fill="white" />
+      <path d="M30 60 Q60 20 90 60 Q60 100 30 60 Z" fill="none" stroke="white" stroke-width="5" />
+      <circle cx="60" cy="60" r="8" fill="royalblue" />
+    </svg>
+    <svg class="logo dark-mode-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="50" fill="white" />
+      <circle cx="60" cy="60" r="25" fill="#1E3A8A" />
+      <path d="M30 60 Q60 20 90 60 Q60 100 30 60 Z" fill="none" stroke="#1E3A8A" stroke-width="5" />
+      <circle cx="60" cy="60" r="8" fill="white" />
+    </svg>
+    <h1 class="text-2xl font-bold ml-2">NetrOn</h1>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="space-x-6 text-base hidden md:flex font-medium" data-aos="fade-down" data-aos-duration="500">
+  <a href="home.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Home</a>
+  <a href="dashboard.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Dashboard</a>
+  <a href="features.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Features</a>
+  <a href="gallery.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Gallery</a>
+  <a href="team.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Team</a>
+  <a href="report.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Report</a>
+  <a href="contact.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Contact</a>
+</nav>
+
+
+  <!-- Right Side Buttons -->
+<div class="flex items-center gap-3">
+  <!-- Theme Toggle -->
+  <button onclick="toggleTheme()" class="px-3 py-1 bg-gray-700 text-white rounded hover:bg-gray-600 text-sm">Toggle Theme</button>
+
+  <!-- Mobile Menu Toggle -->
+  <button onclick="toggleMobileMenu()" class="md:hidden focus:outline-none text-2xl">
+    ☰
+  </button>
+</div>
+
+<!-- Mobile Dropdown Menu with animation and auto-close -->
+<div id="mobileMenu" 
+     class="absolute top-16 right-4 bg-white dark:bg-gray-900 text-sm rounded shadow-lg hidden md:hidden w-60 p-4 space-y-3 z-50"
+     data-aos="fade-down"
+     data-aos-duration="600">
+  <a href="home.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Home</a>
+  <a href="dashboard.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Dashboard</a>
+  <a href="features.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Features</a>
+  <a href="gallery.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Gallery</a>
+  <a href="team.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Team</a>
+  <a href="report.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Report</a>
+  <a href="contact.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+</header>
+
+
+
+<!-- Team Section -->
+<section class="text-center py-16 px-4" data-aos="fade-up">
+  <h2 class="text-5xl font-bold text-blue-600 dark:text-blue-300 mb-12">Meet the NetrOn Team - Novare</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+    <!-- Shrabani -->
+    <div class="rounded-lg glass p-6 text-center flex flex-col items-center">
+      <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/team/shrabani.jpg" alt="Shrabani" class="rounded-full mb-4 w-32 h-32 object-cover" />
+      <h3 class="text-xl font-semibold">Shrabani Singha</h3>
+      <span class="text-xs bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300 px-3 py-1 rounded-full mt-1 mb-2">Team Lead, Ideator & System Architect</span>
+      <p class="text-sm text-gray-700 dark:text-gray-300">EE undergrad | Data Engineering Aspirant</p>
+      <a href="https://linkedin.com/in/shrabani-singha" target="_blank" rel="noopener noreferrer" class="text-blue-500 text-sm mt-2 block">LinkedIn</a>
+    </div>
+
+    <!-- Rohini -->
+    <div class="rounded-lg glass p-6 text-center flex flex-col items-center">
+      <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/team/rohini.jpg" alt="Rohini" class="rounded-full mb-4 w-32 h-32 object-cover" />
+      <h3 class="text-xl font-semibold">Rohini Das</h3>
+      <span class="text-xs bg-pink-100 text-pink-600 dark:bg-pink-900 dark:text-pink-300 px-3 py-1 rounded-full mt-1 mb-2">Hardware Systems Engineer</span>
+      <p class="text-sm text-gray-700 dark:text-gray-300">EE undergrad | EV Systems Enthusiast</p>
+      <a href="http://www.linkedin.com/in/rohini-das-6rd930" target="_blank" rel="noopener noreferrer" class="text-blue-500 text-sm mt-2 block">LinkedIn</a>
+    </div>
+
+    <!-- Rahul -->
+    <div class="rounded-lg glass p-6 text-center flex flex-col items-center">
+      <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/team/rahul.jpg" alt="Rahul" class="rounded-full mb-4 w-32 h-32 object-cover" />
+      <h3 class="text-xl font-semibold">Rahul Kumar Lohra</h3>
+      <span class="text-xs bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300 px-3 py-1 rounded-full mt-1 mb-2">Production & Integration Engineer</span>
+      <p class="text-sm text-gray-700 dark:text-gray-300">PE undergrad | Data Analyst Aspirant</p>
+      <a href="https://www.linkedin.com/in/rahul-kumar-103bb62a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" class="text-blue-500 text-sm mt-2 block">LinkedIn</a>
+    </div>
+
+    <!-- Kapil -->
+    <div class="rounded-lg glass p-6 text-center flex flex-col items-center">
+      <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/team/kapil.jpg" alt="Kapil" class="rounded-full mb-4 w-32 h-32 object-cover" />
+      <h3 class="text-xl font-semibold">Kapil Das</h3>
+      <span class="text-xs bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-300 px-3 py-1 rounded-full mt-1 mb-2">Software Developer</span>
+      <p class="text-sm text-gray-700 dark:text-gray-300">CSE undergrad | Software Engineering Aspirant</p>
+      <a href="https://www.linkedin.com/in/kapil-das-429b2a2b2" target="_blank" rel="noopener noreferrer" class="text-blue-500 text-sm mt-2 block">LinkedIn</a>
+    </div>
+
+    <!-- Ankur -->
+    <div class="rounded-lg glass p-6 text-center flex flex-col items-center">
+      <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/team/ankur.jpg" alt="Ankur" class="rounded-full mb-4 w-32 h-32 object-cover" />
+      <h3 class="text-xl font-semibold">Ankur Kumar</h3>
+      <span class="text-xs bg-indigo-100 text-indigo-600 dark:bg-indigo-900 dark:text-indigo-300 px-3 py-1 rounded-full mt-1 mb-2">Hardware & Testing Engineer</span>
+      <p class="text-sm text-gray-700 dark:text-gray-300">EE undergrad | IoT & Core Systems Enthusiast</p>
+      <a href="https://www.linkedin.com/in/ankur-kumar-2507b3297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="text-blue-500 text-sm mt-2 block">LinkedIn</a>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- CTA -->
+  <div class="text-center py-12" data-aos="fade-up">
+    <a href="home.html" class="text-blue-600 hover:underline">← Return to Homepage</a>
+  </div>
+  
+
+  <footer class="text-center text-sm text-gray-500 mt-12 mb-6">
+    © 2025 Novare. All rights reserved.
+  </footer>
+
+  <script>
+  // Initialize theme on page load
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+
+  // Toggle theme and save preference
+  function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+
+  // Init animations
+  AOS.init();
+</script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+
+  function closeMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.add("hidden");
+  }
+
+  AOS.init({
+    once: true
+  });
+</script>
+
+</html>
