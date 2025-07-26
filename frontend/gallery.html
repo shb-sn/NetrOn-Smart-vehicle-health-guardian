@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetrOn Gallery</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22royalblue%22 /></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          primary: '#1D4ED8', // Tailwind's blue-700 for headings
+          lightbg: '#ebf8ff', // Light blue background
+          darkbg: '#1f2937'   // Gray-800 dark mode
+        }
+      }
+    }
+  }
+</script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .logo {
+      width: 48px;
+      height: 48px;
+    }
+    .light-mode-logo {
+      display: inline;
+    }
+    .dark .light-mode-logo {
+      display: none;
+    }
+    .dark-mode-logo {
+      display: none;
+    }
+    .dark .dark-mode-logo {
+      display: inline;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-white transition-colors duration-500">
+
+  <header class="w-full py-4 px-6 flex justify-between items-center sticky top-0 z-50 glass text-gray-800 dark:text-white bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/20">
+  <div class="flex items-center gap-2">
+    <!-- Logo -->
+    <svg class="logo light-mode-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="50" fill="royalblue" />
+      <circle cx="60" cy="60" r="25" fill="white" />
+      <path d="M30 60 Q60 20 90 60 Q60 100 30 60 Z" fill="none" stroke="white" stroke-width="5" />
+      <circle cx="60" cy="60" r="8" fill="royalblue" />
+    </svg>
+    <svg class="logo dark-mode-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="50" fill="white" />
+      <circle cx="60" cy="60" r="25" fill="#1E3A8A" />
+      <path d="M30 60 Q60 20 90 60 Q60 100 30 60 Z" fill="none" stroke="#1E3A8A" stroke-width="5" />
+      <circle cx="60" cy="60" r="8" fill="white" />
+    </svg>
+    <h1 class="text-2xl font-bold ml-2">NetrOn</h1>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="space-x-6 text-base hidden md:flex font-medium" data-aos="fade-down" data-aos-duration="500">
+  <a href="home.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Home</a>
+  <a href="dashboard.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Dashboard</a>
+  <a href="features.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Features</a>
+  <a href="gallery.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Gallery</a>
+  <a href="team.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Team</a>
+  <a href="report.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Report</a>
+  <a href="contact.html" class="px-3 py-2 rounded hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-700 transition">Contact</a>
+</nav>
+
+
+  <!-- Right Side Buttons -->
+<div class="flex items-center gap-3">
+  <!-- Theme Toggle -->
+  <button onclick="toggleTheme()" class="px-3 py-1 bg-gray-700 text-white rounded hover:bg-gray-600 text-lg">Toggle Theme</button>
+
+  <!-- Mobile Menu Toggle -->
+  <button onclick="toggleMobileMenu()" class="md:hidden focus:outline-none text-2xl">
+    ☰
+  </button>
+</div>
+
+<!-- Mobile Dropdown Menu with animation and auto-close -->
+<div id="mobileMenu" 
+     class="absolute top-16 right-4 bg-white dark:bg-gray-900 text-lg rounded shadow-lg hidden md:hidden w-60 p-4 space-y-3 z-50"
+     data-aos="fade-down"
+     data-aos-duration="600">
+  <a href="home.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Home</a>
+  <a href="dashboard.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Dashboard</a>
+  <a href="features.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Features</a>
+  <a href="gallery.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Gallery</a>
+  <a href="team.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Team</a>
+  <a href="report.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Report</a>
+  <a href="contact.html" class="block py-2 px-3 rounded hover:bg-blue-100 dark:hover:bg-gray-700" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+</header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-16 px-4" data-aos="fade-up">
+    <h2 class="text-5xl font-bold text-blue-600 dark:text-blue-300 mb-4">See NetrOn in Action</h2>
+
+    <p class="text-lg max-w-2xl mx-auto">A glimpse into our prototype, setup process, and real-time dashboard</p>
+  </section>
+
+  <!-- Gallery Section -->
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-6 pb-12 mt-8">
+  <!-- Image 1 -->
+  <div class="text-center">
+    <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/hardware_setup.jpg" alt="Hardware Setup" class="p-6 rounded-xl glass cursor-pointer" onclick="openModal(this.src)">
+    <h4 class="text-lg font-semibold mt-8">Hardware Setup</h4>
+  </div>
+
+  <!-- Image 2 -->
+  <div class="text-center">
+    <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/HC_05_bt_module.jpg" alt="Bluetooth Module" class="p-6 rounded-xl glass cursor-pointer" onclick="openModal(this.src)">
+    <h4 class="text-lg font-semibold mt-8">Bluetooth Module (HC-05)</h4>
+  </div>
+
+  <!-- Image 3 -->
+  <div class="text-center">
+    <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/ADXL345_accelerometer.jpg" alt="Vibration Sensor" class="p-6 rounded-xl glass cursor-pointer" onclick="openModal(this.src)">
+    <h4 class="text-lg font-semibold mt-8">Vibration Sensor (ADXL345)</h4>
+  </div>
+
+  <!-- Image 4 -->
+  <div class="text-center">
+    <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/LM35_temp_sensor.jpg" alt="Temperature Sensor" class="p-6 rounded-xl glass cursor-pointer" onclick="openModal(this.src)">
+    <h4 class="text-lg font-semibold mt-8">Temperature Sensor (LM35)</h4>
+  </div>
+
+  <!-- Image 5 -->
+  <div class="text-center">
+    <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/voltage_divider_vib.jpg" alt="Voltage Alert" class="p-6 rounded-xl glass cursor-pointer" onclick="openModal(this.src)">
+    <h4 class="text-lg font-semibold mt-8">Voltage Divider for Alert</h4>
+  </div>
+
+  <!-- Image 6 -->
+  <div class="text-center">
+    <img src="https://raw.githubusercontent.com/shb-sn/Netron-frontend/main/assets/arduino_serial_monitor.jpg" alt="Arduino Serial Monitor" class="p-6 rounded-xl glass cursor-pointer" onclick="openModal(this.src)">
+    <h4 class="text-lg font-semibold mt-8">Arduino Serial Monitor</h4>
+  </div>
+</section>
+
+
+
+  <!-- CTA -->
+  <div class="text-center py-12" data-aos="fade-up">
+    <a href="home.html" class="text-blue-600 hover:underline">← Return to Homepage</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg text-gray-500 mb-4">
+    © 2025 Novare. All rights reserved.
+  </footer>
+
+  <script>
+  // Initialize theme on page load
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+
+  // Toggle theme and save preference
+  function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+
+  // Init animations
+  AOS.init();
+</script>
+
+
+    <script>
+    function openModal(src) {
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modal-img').src = src;
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+    }
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+
+  function closeMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.add("hidden");
+  }
+
+  AOS.init({
+    once: true
+  });
+</script>
+
+
+</body>
+
+</html>
+
