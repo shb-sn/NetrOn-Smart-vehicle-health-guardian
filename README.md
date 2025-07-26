@@ -56,6 +56,11 @@ You can find the full Arduino code for sensor monitoring and Bluetooth transmiss
 
 ---
 
+🛠️ Front-End Dashboard  
+*Note: Frontend web dashboard is currently under development and will be added shortly. Prototype and backend data logging are complete.*
+
+---
+
 ## 👩‍💼 About Me
 
 I’m **Shrabani Singha**, a 3rd-year B.Tech Electrical Engineering student at NIT Agartala. I’m passionate about combining embedded systems and real-time analytics to solve real-world problems. NetrOn is my take on bringing smart diagnostics to budget-friendly two-wheelers.
