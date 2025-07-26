@@ -137,55 +137,69 @@
   </section>
 
   <!-- Content Cards -->
-  <section class="max-w-5xl mx-auto px-4 grid gap-6 md:grid-cols-2">
-    <div class="p-6 glass my-6" data-aos="fade-up">
-      <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">Problem Statement</h3>
-      <p>Two-wheeler breakdowns are common due to overheating, low battery, or high vibrations, especially in remote areas. There is a need for an affordable, real-time monitoring solution for engine health that doesn’t rely on costly OBD systems.</p>
-    </div>
-    <div class="p-6 glass" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="text-xl font-bold mb-2">Solution Overview</h3>
-      <p>NetrOn is a smart health guardian system for two-wheelers using an Arduino-powered module that monitors engine temperature, battery voltage, and vibration levels. Data is transmitted via Bluetooth and visualized on a Flask-based dashboard.</p>
-    </div>
-    <div class="p-6 glass" data-aos="fade-up" data-aos-delay="200">
-      <h3 class="text-xl font-bold mb-2">Innovation Highlights</h3>
-      <ul class="list-disc ml-5">
-        <li>Low-cost sensor suite (LM35, ADXL345, voltage divider)</li>
-        <li>Threshold-based alert system with LEDs</li>
-        <li>Bluetooth integration for real-time local display</li>
-        <li>Dashboard with interactive visualizations</li>
-      </ul>
-    </div>
-    <div class="p-6 glass my-6" data-aos="fade-up">
-      <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">Key Metrics</h3>
-      <ul class="list-disc ml-5">
-        <li>Normal Temperature: 28–32°C | Alert: >60°C</li>
-        <li>Normal Vibration: 8–9 units | Alert: >30 units</li>
-        <li>Normal Battery Voltage: 7–9V | Alert: <4.5V</li>
-      </ul>
-    </div>
-    <div class="p-6 glass md:col-span-2" data-aos="fade-up" data-aos-delay="400">
-      <h3 class="text-xl font-bold mb-2">Implementation</h3>
-      <p>Built with LM35 (temperature), ADXL345 (vibration), and voltage divider circuit connected to Arduino Uno. Data is processed and sent via HC-05 Bluetooth to a local device. Web dashboard developed using Flask, HTML, and Tailwind CSS.</p>
-    </div>
-    <div class="p-6 glass md:col-span-2" data-aos="fade-up" data-aos-delay="500">
-      <h3 class="text-xl font-bold mb-2">GitHub & Data Links</h3>
-      <ul class="list-disc ml-5">
-        <li><a class="text-blue-500 underline" href="https://github.com/shb-sn/NetrOn-Smart-vehicle-health-guardian">GitHub Repository</a></li>
-        <li><a href="https://raw.githubusercontent.com/shb-sn/NetrOn-Smart-vehicle-health-guardian/main/data_samples/netron_sensor_data_sample.xlsx"
-   download
-   class="text-blue-500 underline">
-   Download Sample Sensor Data
-</a>
+<section class="max-w-5xl mx-auto px-4 grid gap-6 md:grid-cols-2">
+  <div class="p-6 glass my-6" data-aos="fade-up">
+    <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">Problem Statement</h3>
+    <p>Two-wheeler breakdowns are common due to overheating, low battery, or high vibrations, especially in remote areas. There is a need for an affordable, real-time monitoring solution for engine health that doesn’t rely on costly OBD systems.</p>
+  </div>
 
-</li>
-        <li><a class="text-blue-500 underline" href="/dashboard.html">Live Dashboard</a></li>
-      </ul>
-    </div>
-  </section>
+  <div class="p-6 glass" data-aos="fade-up" data-aos-delay="100">
+    <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">Solution Overview</h3>
+    <p>NetrOn is a smart health guardian system for two-wheelers using an Arduino-powered module that monitors engine temperature, battery voltage, and vibration levels. Data is transmitted via Bluetooth and visualized on a Flask-based dashboard.</p>
+  </div>
 
-  <!-- Budget Table -->
+  <div class="p-6 glass" data-aos="fade-up" data-aos-delay="200">
+    <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">Innovation Highlights</h3>
+    <ul class="list-disc ml-5 space-y-1">
+      <li>Low-cost sensor suite (LM35, ADXL345, voltage divider)</li>
+      <li>Threshold-based alert system with LEDs</li>
+      <li>Bluetooth integration for real-time local display</li>
+      <li>Dashboard with interactive visualizations</li>
+    </ul>
+  </div>
+
+  <!-- Key Metrics Section -->
+  <div class="p-6 glass my-6" data-aos="fade-up" data-aos-delay="300">
+    <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">Key Metrics</h3>
+    <div class="space-y-3 text-sm">
+      <div>
+        <p class="font-semibold text-blue-700 dark:text-blue-300">Temperature:</p>
+        <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full mr-2">Normal: 28–32°C</span>
+        <span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded-full">Alert: &gt;60°C</span>
+      </div>
+      <div>
+        <p class="font-semibold text-blue-700 dark:text-blue-300">Vibration:</p>
+        <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full mr-2">Normal: 8–9 units</span>
+        <span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded-full">Alert: &gt;30 units</span>
+      </div>
+      <div>
+        <p class="font-semibold text-blue-700 dark:text-blue-300">Battery Voltage:</p>
+        <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full mr-2">Normal: 7–9V</span>
+        <span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded-full">Alert: &lt;4.5V</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Implementation -->
+  <div class="p-6 glass md:col-span-2" data-aos="fade-up" data-aos-delay="400">
+    <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">Implementation</h3>
+    <p>Built with LM35 (temperature), ADXL345 (vibration), and voltage divider circuit connected to Arduino Uno. Data is processed and sent via HC-05 Bluetooth to a local device. Web dashboard developed using Flask, HTML, and Tailwind CSS.</p>
+  </div>
+
+  <!-- GitHub + Data -->
+  <div class="p-6 glass md:col-span-2" data-aos="fade-up" data-aos-delay="500">
+    <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">GitHub & Data Links</h3>
+    <ul class="list-disc ml-5 space-y-1 text-sm">
+      <li><a class="text-blue-500 underline" href="https://github.com/shb-sn/NetrOn-Smart-vehicle-health-guardian" target="_blank">GitHub Repository</a></li>
+      <li><a href="https://raw.githubusercontent.com/shb-sn/NetrOn-Smart-vehicle-health-guardian/main/data_samples/netron_sensor_data_sample.xlsx" download class="text-blue-500 underline">Download Sample Sensor Data</a></li>
+      <li><a class="text-blue-500 underline" href="/dashboard.html">Live Dashboard</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Budget Breakdown -->
 <section class="max-w-5xl mx-auto px-4 mt-10" data-aos="zoom-in">
-  <h3 class="text-3xl font-bold mb-4 text-purple-700 dark:text-purple-400">Budget Breakdown</h3>
+  <h3 class="text-3xl font-bold mb-4 text-blue-700 dark:text-blue-400">Budget Breakdown</h3>
 
   <!-- Desktop Table -->
   <div class="hidden md:block p-6 glass" data-aos="fade-up">
@@ -262,6 +276,7 @@
     </div>
   </div>
 </section>
+
 
   <!-- CTA -->
   <div class="text-center py-12" data-aos="fade-up">
