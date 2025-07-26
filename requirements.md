@@ -1,0 +1,12 @@
+
+
+***flask***
+
+***pandas***
+
+***pyserial***
+
+***matplotlib***
+
+
+
